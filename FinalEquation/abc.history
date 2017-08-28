@@ -1,0 +1,71 @@
+abc 01> 
+help
+write_aiger -h
+read_aiger p:\output_6\file_1
+write_aiger p:\output_6\file_1_output
+write_aiger p:\output_6\file_1_out
+exit
+abc 02> 
+source ..\abc.rc
+source ..\..\abc.rc
+resub -h
+abc 01> 
+source abc.rc
+rf -h
+rw -h
+st -h
+read_aiger c:\temp\3_var_1.aig
+collapse
+ps -v
+write_aiger c:\temp\check.aig
+write_aiger c:\temp\3_var_1_xxx.aig
+read_aiger c:\temp\3_var_1_bubbled.aig; collapse; st
+write_aiger -h
+write_aag;;
+write_aiger c:\temp\3_var_1_bubbled_xxx.aig
+read_aiger c:\temp\3_var_2.aig; collapse; st
+read_aiger -h
+read_aiger c:\temp\3_var_2.aig; collapse; st -i; collapse; st
+write_aiger c:\temp\3_var_2_xxx.aig
+st -i
+write_dot p:\badfile.dot
+cleanup
+read_aiger c:\temp\mod.aig
+collapse
+read_aiger c:\temp\orig.aig
+cec -h
+cec c:\temp\file_3 c:\temp\file_3_out
+cec c:\temp\file_3.aig c:\temp\file_3_out.aig
+read_aiger c:\temp\file_3
+cec p:\output_3\file_3_out
+read_aiger p:\output_3\file_3
+read_aiger p:\output_3\file_2
+cec p:\output_3\file_3_out.aig
+cec p:\output_3\file_2_out
+cec p:\output_3\file_2_out.aig
+cec p:\output_3\file_2.aig p:\output_3\file_2_out.aig
+cec p:\output_3\file_3.aig p:\output_3\file_3_out.aig
+cec p:\output_3\file_3.aig p:\output_3\file_2_out.aig
+resyn3a
+resyn3
+read_aiger p:\output_3\file_2_out.aig
+rf;rw
+cec c:\temp\mod.aig
+read_aiger c:\temp\mod.aig
+read_aiger c:\temp\orig.aig
+cec c:\temp\bubbled.aig
+read_aiger c:\temp\output_3\file_1.aig
+cec c:\temp\output_3\file_2.aig
+read_aiger c:\temp\output_3\file_2.aig
+read_aiger c:\temp\output_3\file_43.aig
+cec c:\temp\output_3\file_44.aig
+resyn3
+read_aiger c:\temp\output_6\file_1
+resyn2
+abc 06> 
+read_aiger c:\temp\output_10\10_var_5_bubbled.aig
+read_aiger c:\temp\output_10\10_var_5_bubbled
+read_aiger c:\temp\10_var_5_bubbled.aig
+source abc.rc
+read_aiger c:\temp\12_var_7.aig
+read_aiger c:\temp\bubbled.aig
